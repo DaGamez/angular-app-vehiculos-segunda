@@ -2,3 +2,10 @@ footer {
     text-align: center; /* Center-align the text within the footer */
     padding: 10px; /* Optional padding */
   }
+
+#imagen-portada{
+  border-top: 2px solid lightgray;
+  border-bottom:2px solid lightgray;
+  padding: 10px;
+  
+}

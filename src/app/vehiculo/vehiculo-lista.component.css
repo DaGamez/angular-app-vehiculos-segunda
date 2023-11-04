@@ -6,3 +6,10 @@
     font-style: normal;
 
   }
+
+p {
+    margin-bottom: 0;
+    font-family: "Inter-Regular",Helvetiva;
+    font-size: 18px;
+    font-style: normal;
+}
