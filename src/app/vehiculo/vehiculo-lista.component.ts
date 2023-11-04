@@ -17,20 +17,25 @@ export class VehiculoListaComponent implements OnInit {
   getVehiculos() {
       this.vehiculoService.getVehiculos().subscribe(vehiculos => {
       this.vehiculos = vehiculos;
+      this.getMarcas(); 
     });
   }
 
   getMarcas() {
     const marcasSet = new Set<string>();
+    console.log(this.vehiculos);
     this.vehiculos.forEach(vehiculo => {
       marcasSet.add(vehiculo.marca);
     });
     this.marcas = Array.from(marcasSet);
   }
 
+  numeroVehiculosMarca(marca: string): number {
+    return this.vehiculos.filter(vehiculo => vehiculo.marca === marca).length;
+  }
+
   ngOnInit() {
     this.getVehiculos();
-    this.getMarcas();
   }
 
 

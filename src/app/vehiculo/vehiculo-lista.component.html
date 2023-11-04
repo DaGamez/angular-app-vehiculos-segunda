@@ -1,7 +1,7 @@
 <div class="position-sticky">
     <table class="table">
-        <thead class="black-header">
-            <tr>
+        <thead >
+            <tr class="table-dark">
                 <th scope="col">#</th>
                 <th scope="col">Marca</th>
                 <th scope="col">Línea</th>
@@ -19,7 +19,7 @@
     </table>
 </div>
 
-<p *ngFor="let marca of marcas2">{{marca}}</p>
+<p *ngFor="let marca of marcas">Total {{marca}} : {{numeroVehiculosMarca(marca)}}</p>
 
 
   
