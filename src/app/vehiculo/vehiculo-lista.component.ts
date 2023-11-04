@@ -4,10 +4,10 @@ import { VehiculoService } from './vehiculo.service';
 
 @Component({
   selector: 'app-vehiculo',
-  templateUrl: './vehiculo.component.html',
-  styleUrls: ['./vehiculo.component.css']
+  templateUrl: './vehiculo-lista.component.html',
+  styleUrls: ['./vehiculo-lista.component.css']
 })
-export class VehiculoComponent implements OnInit {
+export class VehiculoListaComponent implements OnInit {
   vehiculos: Array<Vehiculo>=[];
 
   constructor(private vehiculoService:VehiculoService) { }
