@@ -9,7 +9,9 @@ import { VehiculoService } from './vehiculo.service';
 })
 export class VehiculoListaComponent implements OnInit {
   vehiculos: Array<Vehiculo>=[];
-
+  marcas: Array<string>=[];
+  marcas2: Array<string>=["a","b","c"];
+  
   constructor(private vehiculoService:VehiculoService) { }
 
   getVehiculos() {
@@ -18,8 +20,17 @@ export class VehiculoListaComponent implements OnInit {
     });
   }
 
+  getMarcas() {
+    const marcasSet = new Set<string>();
+    this.vehiculos.forEach(vehiculo => {
+      marcasSet.add(vehiculo.marca);
+    });
+    this.marcas = Array.from(marcasSet);
+  }
+
   ngOnInit() {
     this.getVehiculos();
+    this.getMarcas();
   }
 
 
