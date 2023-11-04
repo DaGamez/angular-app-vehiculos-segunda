@@ -1,25 +1,30 @@
-<div class="position-sticky">
-    <table class="table">
-        <thead >
-            <tr class="table-dark">
-                <th scope="col">#</th>
-                <th scope="col">Marca</th>
-                <th scope="col">Línea</th>
-                <th scope="col">Modelo</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let v of vehiculos">
-                <td>{{v.id}}</td>
-                <td>{{v.marca}}</td>
-                <td>{{v.linea}}</td>
-                <td>{{v.modelo}}</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+<div class="container">
+    <div class="row">
+      <div class="col-md-9">
+        <table class="table" test-id="table">
+            <thead >
+                <tr class="table-dark" test-id="table-header">
+                    <th scope="col">#</th>
+                    <th scope="col">Marca</th>
+                    <th scope="col">Línea</th>
+                    <th scope="col">Modelo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr test-id="table-row" *ngFor="let v of vehiculos" >
+                    <td>{{v.id}}</td>
+                    <td>{{v.marca}}</td>
+                    <td>{{v.linea}}</td>
+                    <td>{{v.modelo}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <p *ngFor="let marca of marcas">Total {{marca}} : {{numeroVehiculosMarca(marca)}}</p>
+      </div>
+      <div class="col-md-3"></div>
+    </div>
+</div>    
 
-<p *ngFor="let marca of marcas">Total {{marca}} : {{numeroVehiculosMarca(marca)}}</p>
 
 
   

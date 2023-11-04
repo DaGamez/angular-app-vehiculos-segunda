@@ -31,7 +31,7 @@ describe('VehiculoListaComponent', () => {
       fixture = TestBed.createComponent(VehiculoListaComponent);
       component = fixture.componentInstance;
   
-      for (let i = 0; i < 10; i++) {
+      for (let i = 0; i < 3; i++) {
         const id = faker.number.int();
         const marca = faker.lorem.sentence();
         const linea = faker.lorem.sentence();
@@ -55,5 +55,23 @@ describe('VehiculoListaComponent', () => {
     it('should create', () => {
       expect(component).toBeTruthy();
     });
+
+    it('should have a table with header', () => {
+      const table = debug.query(By.css('[test-id="table"]'));
+      expect(table).toBeTruthy();
+
+      const header = table.query(By.css('[test-id="table-header"]'));
+      expect(header).toBeTruthy();
+    });
+
+    it('should have 3 rows in the table', () => {
+      const table = debug.query(By.css('[test-id="table"]'));
+      expect(table).toBeTruthy();
+
+      const rows = table.queryAll(By.css('[test-id="table-row"]'));
+      expect(rows.length).toBe(3);
+    });
     
+    
+
   });
